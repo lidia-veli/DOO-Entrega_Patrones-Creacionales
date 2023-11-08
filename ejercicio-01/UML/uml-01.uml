@@ -1,0 +1,90 @@
+@startuml
+class AbstractFactory {
+  + datos: Any
+  {abstract} + calcular_media(): AbstractMedia
+  {abstract} + calcular_mediana(): AbstractMediana
+  {abstract} + graficar_histograma(): AbstractHistograma
+  {abstract} + calcular_moda(): AbstractModa
+}
+
+class ConcreteFactory_HSolicitud {
+  + calcular_media(): AbstractMedia
+  + calcular_mediana(): AbstractMediana
+  + calcular_moda(): AbstractModa
+  + graficar_histograma(): AbstractHistograma
+}
+
+class ConcreteFactory_HIntervencion {
+  + calcular_media(): AbstractMedia
+  + calcular_mediana(): AbstractMediana
+  + calcular_moda(): AbstractModa
+  + graficar_histograma(): AbstractHistograma
+}
+
+class AbstractMedia {
+  + datos: Any
+  {abstract} + calcular_media(): Any
+}
+
+class ConcreteMedia_HSol {
+  + calcular_media(): Any
+}
+
+class ConcreteMedia_HInterv {
+  + calcular_media(): Any
+}
+
+class AbstractMediana {
+  + datos: Any
+  {abstract} + calcular_mediana(): Any
+}
+
+class ConcreteMediana_HSol {
+  + calcular_mediana(): Any
+}
+
+class ConcreteMediana_HInterv {
+  + calcular_mediana(): Any
+}
+
+class AbstractModa {
+  + datos: Any
+  {abstract} + calcular_moda(): Any
+}
+
+class ConcreteModa_HSol {
+  + calcular_moda(): Any
+}
+
+class ConcreteModa_HInterv {
+  + calcular_moda(): Any
+}
+
+class AbstractHistograma {
+  + datos: Any
+  {abstract} + graficar_histograma(): Any
+}
+
+class ConcreteHistograma_HSol {
+  + graficar_histograma(): Any
+}
+
+class ConcreteHistograma_HInterv {
+  + graficar_histograma(): Any
+}
+
+AbstractFactory <|-- ConcreteFactory_HSolicitud
+AbstractFactory <|-- ConcreteFactory_HIntervencion
+
+AbstractMedia <|-- ConcreteMedia_HSol
+AbstractMedia <|-- ConcreteMedia_HInterv
+
+AbstractMediana <|-- ConcreteMediana_HSol
+AbstractMediana <|-- ConcreteMediana_HInterv
+
+AbstractModa <|-- ConcreteModa_HSol
+AbstractModa <|-- ConcreteModa_HInterv
+
+AbstractHistograma <|-- ConcreteHistograma_HSol
+AbstractHistograma <|-- ConcreteHistograma_HInterv
+@enduml
