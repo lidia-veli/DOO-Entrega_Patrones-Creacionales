@@ -9,19 +9,19 @@ class Director:
         self._builder = None  # no es privado, es PROTEGIDO, se puede acceder desde las clases hijas
 
     @property
-    def builder(self) -> BuilderPizza:
+    def builder(self): # -> BuilderPizza:
         return self._builder
 
     @builder.setter
-    def BuilderPizza(self, builder: BuilderPizza) -> None:
+    def builder(self, builder: BuilderPizza) -> None:
         self._builder = builder
 
 
     def build_pizza(self) -> None:
-        self.builder.masa()
-        self.builder.salsa_base()
-        self.builder.ingredientes()
-        self.builder.coccion()
-        self.builder.presentacion()
-        self.builder.maridaje()
-        self.builder.extras()
+        self.builder.tipo_masa()
+        self.builder.tipo_salsa_base()
+        self.builder.tipo_ingredientes()
+        self.builder.tipo_coccion()
+        self.builder.tipo_presentacion()
+        self.builder.tipo_maridaje()
+        self.builder.tipo_extras()

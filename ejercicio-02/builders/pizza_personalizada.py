@@ -13,7 +13,7 @@ class ConcreteBuilder_PizzaPersonalizada(BuilderPizza):
         self._pizza = PizzaPersonalizada()
 
     @property
-    def pizza(self) -> PizzaPersonalizada:
+    def pizza(self): # -> PizzaPersonalizada
         pizza = self._pizza
         self.reset()
         return pizza
@@ -27,11 +27,13 @@ class ConcreteBuilder_PizzaPersonalizada(BuilderPizza):
         self._pizza.add(f"Salsa base: {salsa}")
 
     def tipo_ingredientes(self) -> None:
+        lista_ingredientes = []
         while True:
             ingrediente = input("Agrega ingredientes (escribe '0' para terminar): ")
             if ingrediente.lower() == '0':
                 break
-            self._pizza.add(f"Ingrediente: {ingrediente}")
+            lista_ingredientes.append(ingrediente)
+        self._pizza.add(f"Ingredientes: {', '.join(lista_ingredientes)}")
 
     def tipo_coccion(self) -> None:
         coccion = input("Elige el tipo de cocción (horno, parrilla, leña): ")
@@ -42,18 +44,12 @@ class ConcreteBuilder_PizzaPersonalizada(BuilderPizza):
         self._pizza.add(f"Presentación: {presentacion}")
 
     def tipo_maridaje(self) -> None:
-        num_bebidas = int(input("¿Cuántas bebidas deseas agregar? (0 para omitir): "))
-        if num_bebidas > 0:
-            for _ in range(num_bebidas):
-                bebida = input("Elige una bebida (refresco, cerveza, agua): ")
-                self._pizza.add(f"Maridaje: {bebida}")
-        else:
-            self._pizza.add("Maridaje: 0")
+        maridaje = input("Elige el tipo de maridaje (cerveza, vino, refresco): ")
+        self._pizza.add(f"Maridaje: {maridaje}")
 
     def tipo_extras(self) -> None:
         extra = input("Agrega un extra (o escribe '0' para omitir): ")
-        if extra.lower() != '0':
-            self._pizza.add(f"Extra: {extra}")
+        self._pizza.add(f"Extra: {extra}")
 
 
 
