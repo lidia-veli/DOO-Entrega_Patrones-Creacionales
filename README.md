@@ -46,8 +46,6 @@ El uso del patrón Builder es una elección sólida para resolver el problema de
 - **Gestión de pedidos y almacenamiento de datos**: El patrón Builder se integra de manera efectiva con la gestión de pedidos y el almacenamiento de datos, como se vio en la implementación que creamos. Esto permite una fácil asociación de pizzas a pedidos y su posterior almacenamiento en un archivo CSV.
 
 - **Interfaz clara para el cliente**: El patrón Builder proporciona una interfaz clara para que el cliente construya pizzas paso a paso, lo que facilita la toma de decisiones y la personalización.
-
-- **Sencillez en la implementación de recomendaciones**: Puedes agregar fácilmente recomendaciones de ingredientes y combinaciones de pizzas basadas en elecciones anteriores del cliente en cada constructor concreto.
   
   
 Otros patrones creacionales no serían tan adecuados para resolver el problema de la pizzería por las siguientes razones:
